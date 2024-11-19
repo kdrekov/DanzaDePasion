@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>За нас - Danza de Pasion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/header-bg.jpg');
+            background-size: cover;
+            color: white;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/about-hero.jpg');
+            background-size: cover;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff3333;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .about-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            color: #ff4d4d;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1rem;
+        }
+
+        .about-section ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+        }
+
+        .about-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructor-section {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .instructor-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .instructor-info h3 {
+            color: #ff4d4d;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .instructor-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .instructor-image {
+                height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Danza de Pasion</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="classes.html">Курсове</a></li>
+                <li><a href="events.html">Събития</a></li>
+                <li><a href="gallery.html">Галерия</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>За Danza de Pasion</h1>
+        <p>Мястото, където танцът оживява!</p>
+    </section>
+
+    <main class="container">
+        <div class="about-content">
+            <div class="about-section">
+                <h2>Добре дошли</h2>
+                <p>Вече повече от 8 години ние в Danza de Pasion посвещаваме сърцата си на магията на латино танците. Създадохме нашата школа с една проста мисия – да вдъхновим хората да изразяват себе си чрез музика, движение и страст.</p>
+                <p>Независимо дали сте начинаещ, който за пръв път стъпва на дансинга, или напреднал танцьор, който иска да усъвършенства техниката си, ние сме тук, за да ви подкрепим по вашето танцово пътешествие.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Нашата история</h2>
+                <p>Danza de Pasion започна като малка общност от ентусиазирани танцьори, обединени от любовта си към салса, бачата, меренге и още много стилове. С течение на времето, школата ни се превърна в динамично и вдъхновяващо място, където хората се събират не само да танцуват, но и да създават приятелства и незабравими спомени.</p>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Защо да изберете нас?</h2>
+            <ul>
+                <li>Екип от опитни и сертифицирани инструктори</li>
+                <li>Топла и приветлива атмосфера</li>
+                <li>Разнообразие от стилове и нива</li>
+                <li>Забавни социални събития и танцови партита</li>
+            </ul>
+        </div>
+
+        <div class="instructor-section">
+            <img src="/images/instructor-anelia.jpg" alt="Анелия Господинова" class="instructor-image">
+            <div class="instructor-info">
+                <h3>Нашият екип</h3>
+                <p>Нашите инструктори са не само отлични танцьори, но и вдъхновяващи преподаватели, които ще ви помогнат да разкриете пълния си потенциал. Със страст към танца и лично отношение към всеки ученик, те ще направят вашето обучение забавно и мотивиращо.</p>
+                <p>Под ръководството на Анелия Господинова, нашият екип съчетава професионален опит с истинска страст към преподаването.</p>
+                <a href="contact.html" class="btn">Свържете се с нас</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid container">
+            <div>
+                <h3>Контакти</h3>
+                <p>Адрес: Младежки дом, Ямбол</p>
+                <p>Телефон: +359 888 123 456</p>
+                <p>Email: info@danzadepasion.bg</p>
+            </div>
+            <div>
+                <h3>Работно време</h3>
+                <p>Понеделник - Петък: 17:00 - 22:00</p>
+                <p>Събота: 10:00 - 14:00</p>
+                <p>Неделя: Затворено</p>
+            </div>
+            <div>
+                <h3>Последвайте ни</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
