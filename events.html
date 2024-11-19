@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Събития - Danza de Pasion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/events-header.jpg');
+            background-size: cover;
+            color: white;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .events-section {
+            margin: 3rem 0;
+        }
+
+        .events-section h2 {
+            color: #ff4d4d;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-title {
+            color: #ff4d4d;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .event-details {
+            margin-bottom: 1rem;
+        }
+
+        .event-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .event-date {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .event-location {
+            color: #888;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #ff3333;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ff4d4d, transparent);
+            margin: 4rem 0;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Danza de Pasion</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="classes.html">Курсове</a></li>
+                <li><a href="events.html">Събития</a></li>
+                <li><a href="gallery.html">Галерия</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="events-section">
+            <h2>Предстоящи събития в България</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <img src="/images/balkanski-salsa-kongres.jpg" alt="Балкански Салса Конгрес" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">17-ти Балкански Салса Конгрес</h3>
+                        <div class="event-details">
+                            <p class="event-date">28 ноември – 1 декември 2024 г.</p>
+                            <p class="event-location">Боровец, България</p>
+                            <p>Един от най-големите салса конгреси в Европа, събиращ над 100 участници от различни държави, включително България, Гърция, Кипър, Румъния, Куба, Великобритания, Италия и Испания.</p>
+                        </div>
+                        <a href="#" class="btn">Повече информация</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="/images/paradise-salsa.jpg" alt="Paradise Salsa Holiday" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">11-ти Paradise Salsa Holiday</h3>
+                        <div class="event-details">
+                            <p class="event-date">4 – 9 септември 2024 г.</p>
+                            <p class="event-location">Ахелой, България</p>
+                            <p>Петдневна салса ваканция с уроци, партита край басейна и на морския бряг, състезания с награди и участие на танцьори от България, Румъния, Гърция, Испания, Италия и Кипър.</p>
+                        </div>
+                        <a href="#" class="btn">Повече информация</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="/images/world-championship.jpg" alt="Световно първенство" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Световно първенство за шоупрограми</h3>
+                        <div class="event-details">
+                            <p class="event-date">31 август 2024 г.</p>
+                            <p class="event-location">Арена Бургас, Бургас, България</p>
+                            <p>Първото по рода си световно първенство за шоупрограми по латино танци, събиращо двойки от цял свят в надпревара за златните отличия.</p>
+                        </div>
+                        <a href="#" class="btn">Повече информация</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="events-section">
+            <h2>Международни събития</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <img src="/images/istanbul-festival.jpg" alt="Istanbul Dance Festival" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Istanbul International Dance Festival</h3>
+                        <div class="event-details">
+                            <p class="event-date">15 – 18 май 2025 г.</p>
+                            <p class="event-location">Истанбул, Турция</p>
+                            <p>Ежегоден фестивал, събиращ танцьори от цял свят за уроци, партита и състезания по салса, бачата, кизомба и други латино танци.</p>
+                        </div>
+                        <a href="#" class="btn">Повече информация</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="/images/athens-festival.jpg" alt="Athens Salsa Festival" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Athens Salsa Spring Festival</h3>
+                        <div class="event-details">
+                            <p class="event-date">10 – 12 април 2025 г.</p>
+                            <p class="event-location">Атина, Гърция</p>
+                            <p>Пролетен фестивал, предлагащ уроци с международни инструктори, вечерни партита и шоу програми в сърцето на Атина.</p>
+                        </div>
+                        <a href="#" class="btn">Повече информация</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <img src="/images/bucharest-festival.jpg" alt="Bucharest Dance Festival" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Bucharest Latin Dance Festival</h3>
+                        <div class="event-details">
+                            <p class="event-date">20 – 22 юни 2025 г.</p>
+                            <p class="event-location">Букурещ, Румъния</p>
+                            <p>Фестивал, обединяващ любители на латино танците с уроци, състезания и партита с участието на известни DJ-и и инструктори.</p>
+                        </div>
+                        <a href="#" class="btn">Повече информация</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="note" style="text-align: center; margin-top: 2rem; color: #666;">
+            <p>* Датите и местата на международните събития са примерни и подлежат на промяна. Моля, проверете официалните сайтове на събитията за най-актуална информация.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid container">
+            <div>
+                <h3>Контакти</h3>
+                <p>Адрес: Младежки дом, Ямбол</p>
+                <p>Телефон: +359 888 123 456</p>
+                <p>Email: info@danzadepasion.bg</p>
+            </div>
+            <div>
+                <h3>Работно време</h3>
+                <p>Понеделник - Петък: 17:00 - 22:00</p>
+                <p>Събота: 10:00 - 14:00</p>
+                <p>Неделя: Затворено</p>
+            </div>
+            <div>
+                <h3>Последвайте ни</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерия - Danza de Pasion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/gallery-header.jpg');
+            background-size: cover;
+            color: white;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .gallery-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-intro h1 {
+            color: #ff4d4d;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-nav button {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .gallery-nav button.active {
+            color: #ff4d4d;
+            border-bottom: 2px solid #ff4d4d;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .video-section {
+            margin-top: 4rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .video-item video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .video-content {
+            padding: 1rem;
+        }
+
+        .share-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff3333;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Danza de Pasion</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="classes.html">Курсове</a></li>
+                <li><a href="events.html">Събития</a></li>
+                <li><a href="gallery.html">Галерия</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="gallery-intro">
+            <h1>Нашата Галерия</h1>
+            <p>Специални моменти, уловени на дансинга, от нашите курсове, събития и незабравими танцови партита.</p>
+        </section>
+
+        <div class="gallery-nav">
+            <button class="active">Всички</button>
+            <button>Курсове</button>
+            <button>Събития</button>
+            <button>Шоу програми</button>
+            <button>Партита</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Курсове -->
+            <div class="gallery-item">
+                <img src="/images/gallery/course-1.jpg" alt="Курс по салса">
+                <div class="overlay">
+                    <h3>Курс по салса</h3>
+                    <p>Първи стъпки в салсата</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/images/gallery/course-2.jpg" alt="Курс по бачата">
+                <div class="overlay">
+                    <h3>Курс по бачата</h3>
+                    <p>Напреднала група</p>
+                </div>
+            </div>
+
+            <!-- Събития -->
+            <div class="gallery-item">
+                <img src="/images/gallery/event-1.jpg" alt="Латино парти">
+                <div class="overlay">
+                    <h3>Лятно парти</h3>
+                    <p>Юли 2024</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/images/gallery/event-2.jpg" alt="Фестивал">
+                <div class="overlay">
+                    <h3>Танцов фестивал</h3>
+                    <p>Септември 2024</p>
+                </div>
+            </div>
+
+            <!-- Шоу програми -->
+            <div class="gallery-item">
+                <img src="/images/gallery/show-1.jpg" alt="Шоу програма">
+                <div class="overlay">
+                    <h3>Годишно шоу</h3>
+                    <p>Декември 2024</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/images/gallery/show-2.jpg" alt="Състезание">
+                <div class="overlay">
+                    <h3>Състезание по салса</h3>
+                    <p>Октомври 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="video-section">
+            <h2>Видео акценти</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <video controls>
+                        <source src="/videos/highlight-1.mp4" type="video/mp4">
+                        Вашият браузър не поддържа HTML5 видео.
+                    </video>
+                    <div class="video-content">
+                        <h3>Годишно шоу 2024</h3>
+                        <p>Най-добрите моменти от нашето годишно представление</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="/videos/highlight-2.mp4" type="video/mp4">
+                        Вашият браузър не поддържа HTML5 видео.
+                    </video>
+                    <div class="video-content">
+                        <h3>Летен фестивал</h3>
+                        <p>Моменти от нашия летен танцов фестивал</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="share-section">
+            <h2>Споделете своята танцова история!</h2>
+            <p>Ако сте част от нашата школа, ще се радваме да добавим и вашите снимки и видеа към галерията.</p>
+            <a href="contact.html" class="btn">Изпратете снимки</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid container">
+            <div>
+                <h3>Контакти</h3>
+                <p>Адрес: Младежки дом, Ямбол</p>
+                <p>Телефон: +359 888 123 456</p>
+                <p>Email: info@danzadepasion.bg</p>
+            </div>
+            <div>
+                <h3>Работно време</h3>
+                <p>Понеделник - Петък: 17:00 - 22:00</p>
+                <p>Събота: 10:00 - 14:00</p>
+                <p>Неделя: Затворено</p>
+            </div>
+            <div>
+                <h3>Последвайте ни</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

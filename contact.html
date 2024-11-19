@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Danza de Pasion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/contact-header.jpg');
+            background-size: cover;
+            color: white;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h2 {
+            color: #ff4d4d;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item i {
+            color: #ff4d4d;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .schedule {
+            margin: 2rem 0;
+        }
+
+        .schedule table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule th,
+        .schedule td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #ff3333;
+        }
+
+        .map {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Danza de Pasion</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="classes.html">Курсове</a></li>
+                <li><a href="events.html">Събития</a></li>
+                <li><a href="gallery.html">Галерия</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Свържете се с нас</h1>
+        <p>Стъпка към ритъма на танца!</p>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Нашите контакти</h2>
+                <div class="contact-item">
+                    <i>📍</i>
+                    <span>Младежки дом, Ямбол</span>
+                </div>
+                <div class="contact-item">
+                    <i>📞</i>
+                    <span>+359 888 123 456</span>
+                </div>
+                <div class="contact-item">
+                    <i>📧</i>
+                    <span>info@danzadepasion.bg</span>
+                </div>
+
+                <div class="schedule">
+                    <h3>Работно време</h3>
+                    <table>
+                        <tr>
+                            <td>Понеделник</td>
+                            <td>10:00 - 20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Вторник</td>
+                            <td>10:00 - 20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Сряда</td>
+                            <td>10:00 - 20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Четвъртък</td>
+                            <td>10:00 - 20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Петък</td>
+                            <td>10:00 - 20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Събота</td>
+                            <td>11:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Неделя</td>
+                            <td>Почивен ден</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Изпратете ни съобщение</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Име</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Имейл</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон (по избор)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Съобщение</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Изпрати</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=your-embed-code" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid container">
+            <div>
+                <h3>Контакти</h3>
+                <p>Адрес: Младежки дом, Ямбол</p>
+                <p>Телефон: +359 888 123 456</p>
+                <p>Email: info@danzadepasion.bg</p>
+            </div>
+            <div>
+                <h3>Работно време</h3>
+                <p>Понеделник - Петък: 17:00 - 22:00</p>
+                <p>Събота: 10:00 - 14:00</p>
+                <p>Неделя: Затворено</p>
+            </div>
+            <div>
+                <h3>Последвайте ни</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
