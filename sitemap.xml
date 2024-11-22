@@ -1,45 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://kdrekov.github.io/danzadepasion/</loc>
+        <loc>https://danzadepasion.eu/</loc>
         <lastmod>2024-03-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://kdrekov.github.io/danzadepasion/about.html</loc>
+        <loc>https://danzadepasion.eu/about.html</loc>
         <lastmod>2024-03-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://kdrekov.github.io/danzadepasion/classes.html</loc>
+        <loc>https://danzadepasion.eu/classes.html</loc>
         <lastmod>2024-03-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://kdrekov.github.io/danzadepasion/events.html</loc>
+        <loc>https://danzadepasion.eu/events.html</loc>
         <lastmod>2024-03-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://kdrekov.github.io/danzadepasion/gallery.html</loc>
+        <loc>https://danzadepasion.eu/gallery.html</loc>
         <lastmod>2024-03-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://kdrekov.github.io/danzadepasion/blog.html</loc>
+        <loc>https://danzadepasion.eu/blog.html</loc>
         <lastmod>2024-03-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://kdrekov.github.io/danzadepasion/contact.html</loc>
+        <loc>https://danzadepasion.eu/contact.html</loc>
         <lastmod>2024-03-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <!-- Статии от блога -->
+    <url>
+        <loc>https://danzadepasion.eu/articles/first-steps.html</loc>
+        <lastmod>2024-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://danzadepasion.eu/articles/overcome-shyness.html</loc>
+        <lastmod>2024-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://danzadepasion.eu/articles/first-lesson.html</loc>
+        <lastmod>2024-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 </urlset>
