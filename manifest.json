@@ -1,0 +1,21 @@
+{
+  "name": "Danza de Pasion - Школа за латино танци",
+  "short_name": "Danza de Pasion",
+  "description": "Школа за латино танци в Ямбол - салса, бачата и други",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff4d4d",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
