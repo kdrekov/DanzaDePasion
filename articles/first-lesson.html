@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Първите стъпки в латино танците - Danza de Pasion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/blog-header.jpg');
+            background-size: cover;
+            color: white;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/article-hero.jpg');
+            background-size: cover;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .article-content h2 {
+            color: #ff4d4d;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .article-content li:before {
+            content: "•";
+            color: #ff4d4d;
+            position: absolute;
+            left: 0;
+        }
+
+        .dance-style {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .dance-style:hover {
+            transform: translateY(-5px);
+        }
+
+        .dance-style h3 {
+            color: #ff4d4d;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ff4d4d;
+            padding-bottom: 0.5rem;
+        }
+
+        .back-to-blog {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-top: 2rem;
+        }
+
+        .back-to-blog:hover {
+            background: #ff3333;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: #ff4d4d;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #ff3333;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+		.article-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .tip-box {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">Danza de Pasion</a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Начало</a></li>
+                <li><a href="../about.html">За нас</a></li>
+                <li><a href="../classes.html">Курсове</a></li>
+                <li><a href="../events.html">Събития</a></li>
+                <li><a href="../gallery.html">Галерия</a></li>
+                <li><a href="../blog.html">Блог</a></li>
+                <li><a href="../contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <section class="hero">
+        <h1>Подготовка за първия урок по танци</h1>
+        <p>Всичко, което трябва да знаете преди първото си посещение</p>
+    </section>
+
+    <main class="container">
+        <div class="article-content">
+            <p>Първият урок по танци е винаги вълнуващ – ново място, нови хора и възможността да започнете нещо забавно и зареждащо. Може обаче да се чудите какво да облечете, какво да донесете със себе си и какво да очаквате. Не се притеснявайте – тази статия ще ви помогне да се подготвите и да се почувствате комфортно в залата.</p>
+
+            <!-- Добавяме снимка на танцова зала с хора, които се подготвят за урок -->
+            <img src="/images/articles/dance-class-preparation.jpg" alt="Подготовка за танцов урок" class="article-image">
+
+            <h2>Какво да облечете за първия урок?</h2>
+            <p>Вашето облекло трябва да е удобно и подходящо за движение. Ето някои съвети:</p>
+
+            <!-- Добавяме grid със снимки на подходящо облекло -->
+            <div class="image-grid">
+                <img src="/images/articles/ladies-outfit.jpg" alt="Облекло за дами">
+                <img src="/images/articles/mens-outfit.jpg" alt="Облекло за мъже">
+            </div>
+
+            <div class="tip-box">
+                <h3>За дамите:</h3>
+                <ul>
+                    <li>Леки панталони, клин или пола, която не ограничава движението</li>
+                    <li>Горната част може да бъде тениска или блуза, която позволява свобода на ръцете</li>
+                </ul>
+                <h3>За мъжете:</h3>
+                <ul>
+                    <li>Леки панталони или дънки</li>
+                    <li>Тениска или риза</li>
+                </ul>
+            </div>
+
+            <h2>Подходящи обувки</h2>
+            <!-- Снимка на подходящи танцови обувки -->
+            <img src="/images/articles/dance-shoes.jpg" alt="Танцови обувки" class="article-image">
+            <ul>
+                <li>Носете обувки с мека подметка, които са удобни за стъпване и не се хлъзгат</li>
+                <li>Избягвайте маратонки с гумени подметки, защото те затрудняват завъртанията</li>
+                <li>Ако планирате да продължите с уроците, може да инвестирате в специални танцови обувки</li>
+            </ul>
+
+            <h2>Какво да донесете със себе си?</h2>
+            <div class="tip-box">
+                <ul>
+                    <li><strong>Бутилка с вода:</strong> Танците могат да бъдат интензивни, затова е важно да се хидратирате</li>
+                    <li><strong>Кърпа:</strong> Полезна е, ако се изпотите по време на урока</li>
+                    <li><strong>Тетрадка или телефон за записки:</strong> Ако искате да запишете движения или съвети</li>
+                    <li><strong>Добро настроение:</strong> Усмивката и положителната нагласа са вашите най-добри аксесоари</li>
+                </ul>
+            </div>
+
+            <h2>Какво да очаквате от първия урок?</h2>
+            <!-- Снимка от реален урок -->
+            <img src="/images/articles/first-lesson.jpg" alt="Първи урок по танци" class="article-image">
+            
+            <h3>1. Запознаване с групата</h3>
+            <ul>
+                <li>Ще се запознаете с вашия инструктор и съучениците си</li>
+                <li>Групата обикновено е приятелска и подкрепяща</li>
+                <li>Инструкторът ще ви разкаже какво ще учите и ще направи кратко въведение</li>
+            </ul>
+
+            <h3>2. Основни стъпки</h3>
+            <ul>
+                <li>Първият урок обикновено е посветен на основните движения и ритъм</li>
+                <li>Ще научите как да броите тактовете на музиката</li>
+                <li>Ще се научите как да синхронизирате движенията си с партньора</li>
+            </ul>
+
+            <div class="tip-box">
+                <h3>Съвети за успешно първо посещение:</h3>
+                <ul>
+                    <li>Пристигнете навреме</li>
+                    <li>Бъдете отворени към нови преживявания</li>
+                    <li>Не се страхувайте да задавате въпроси</li>
+                    <li>Приемете грешките като част от обучението</li>
+                    <li>Социализирайте се с другите участници</li>
+                </ul>
+            </div>
+
+            <h2>Какво ще спечелите от първия урок?</h2>
+            <ul>
+                <li>Удовлетворение, че сте направили първата стъпка</li>
+                <li>Мотивация да продължите да учите и да се развивате</li>
+                <li>Енергия и добро настроение</li>
+            </ul>
+
+            <h2>Заключение</h2>
+            <p>Подготовката за първия урок е лесна, ако знаете какво да очаквате и как да се подготвите. Най-важното е да пристъпите към залата с отворено съзнание и желание да се забавлявате. В Danza de Pasion сме тук, за да ви подкрепим във всяка стъпка от вашето танцово пътешествие.</p>
+
+            <p><strong>Очакваме ви с усмивка и ритъм в сърцето!</strong></p>
+
+            <a href="../blog.html" class="back-to-blog">← Обратно към блога</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid container">
+            <div>
+                <h3>Контакти</h3>
+                <p>Адрес: Младежки дом, Ямбол</p>
+                <p>Телефон: +359 888 123 456</p>
+                <p>Email: info@danzadepasion.bg</p>
+            </div>
+            <div>
+                <h3>Работно време</h3>
+                <p>Понеделник - Петък: 17:00 - 22:00</p>
+                <p>Събота: 10:00 - 14:00</p>
+                <p>Неделя: Затворено</p>
+            </div>
+            <div>
+                <h3>Последвайте ни</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/148573925972706/">Facebook</a>
+                    <a href="https://www.instagram.com/danzadepasion/profilecard/?igsh=YzFpdzIyc3A1NnBo">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

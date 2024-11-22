@@ -67,34 +67,42 @@
         .hero {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('blog-hero.jpg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/blog-hero.jpg');
             background-size: cover;
             color: white;
             margin-bottom: 2rem;
         }
 
-        .blog-grid {
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-container {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
 
-        .blog-categories {
+        .blog-category {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            height: fit-content;
+            transition: transform 0.3s;
         }
 
-        .blog-category {
-            margin-bottom: 2rem;
+        .blog-category:hover {
+            transform: translateY(-5px);
         }
 
         .blog-category h3 {
             color: #ff4d4d;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ff4d4d;
         }
 
         .blog-category ul {
@@ -102,7 +110,7 @@
         }
 
         .blog-category li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             padding-left: 1.5rem;
             position: relative;
         }
@@ -114,41 +122,15 @@
             left: 0;
         }
 
-        .newsletter {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .newsletter h3 {
-            color: #ff4d4d;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter input {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #ff4d4d;
-            color: white;
+        .blog-category li a {
+            color: #333;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
+            transition: color 0.3s;
+            display: block;
         }
 
-        .btn:hover {
-            background: #ff3333;
+        .blog-category li a:hover {
+            color: #ff4d4d;
         }
 
         footer {
@@ -163,11 +145,37 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
-		.footer-grid .social-links a {
-		color: #ff4d4d; /* Червен цвят */
-        text
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: #ff4d4d;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #ff3333;
+        }
+
         @media (max-width: 768px) {
-            .blog-grid {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .blog-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -175,7 +183,7 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">Danza de Pasión</a>
+        <a href="index.html" class="logo">Danza de Pasion</a>
         <nav>
             <ul>
                 <li><a href="index.html">Начало</a></li>
@@ -195,54 +203,51 @@
     </section>
 
     <main class="container">
-        <div class="blog-grid">
-            <div class="blog-categories">
-                <div class="blog-category">
-                    <h3>Съвети за начинаещи</h3>
-                    <ul>
-                        <li>Първите стъпки в салсата, бачата и другите латино стилове</li>
-                        <li>Как да преодолеете притеснението си на дансинга</li>
-                        <li>Подготовка за първия урок – какво да облечете и какво да очаквате</li>
-                    </ul>
-                </div>
-
-                <div class="blog-category">
-                    <h3>Техники и трикове</h3>
-                    <ul>
-                        <li>Съвети за подобряване на техниката и координацията</li>
-                        <li>Упражнения за баланс, гъвкавост и бързина</li>
-                        <li>Как да разберете партньора си в социалния танц</li>
-                    </ul>
-                </div>
-
-                <div class="blog-category">
-                    <h3>Информация за стиловете</h3>
-                    <ul>
-                        <li>История и произход на салсата, бачата, меренге и други</li>
-                        <li>Разлики между стиловете и как да изберете своя любим</li>
-                        <li>Вдъхновяващи истории за известни танцьори</li>
-                    </ul>
-                </div>
-
-                <div class="blog-category">
-                    <h3>Ползи от танците</h3>
-                    <ul>
-                        <li>Как танците подобряват физическото и психическото здраве</li>
-                        <li>Защо латино танците са перфектният начин за релаксация</li>
-                    </ul>
-                </div>
-
-                <div class="blog-category">
-                    <h3>Събития и новини</h3>
-                    <ul>
-                        <li>Предстоящи уъркшопи, партита и фестивали</li>
-                        <li>Репортажи от последните събития в нашата школа</li>
-                        <li>Специални гости и изненади</li>
-                    </ul>
-                </div>
+        <div class="blog-container">
+            <div class="blog-category">
+                <h3>Съвети за начинаещи</h3>
+                <ul>
+                    <li><a href="articles/first-steps.html">Първите стъпки в салсата, бачата и другите латино стилове</a></li>
+                    <li><a href="articles/overcome-shyness.html">Как да преодолеете притеснението си на дансинга</a></li>
+                    <li><a href="articles/first-lesson.html">Подготовка за първия урок – какво да облечете и какво да очаквате</a></li>
+                </ul>
             </div>
 
-            
+            <div class="blog-category">
+                <h3>Техники и трикове</h3>
+                <ul>
+                    <li><a href="articles/improve-technique.html">Съвети за подобряване на техниката и координацията</a></li>
+                    <li><a href="articles/balance-exercises.html">Упражнения за баланс, гъвкавост и бързина</a></li>
+                    <li><a href="articles/partner-connection.html">Как да разберете партньора си в социалния танц</a></li>
+                </ul>
+            </div>
+
+            <div class="blog-category">
+                <h3>Информация за стиловете</h3>
+                <ul>
+                    <li><a href="articles/dance-history.html">История и произход на салсата, бачата, меренге и други</a></li>
+                    <li><a href="articles/style-differences.html">Разлики между стиловете и как да изберете своя любим</a></li>
+                    <li><a href="articles/famous-dancers.html">Вдъхновяващи истории за известни танцьори</a></li>
+                </ul>
+            </div>
+
+            <div class="blog-category">
+                <h3>Ползи от танците</h3>
+                <ul>
+                    <li><a href="articles/health-benefits.html">Как танците подобряват физическото и психическото здраве</a></li>
+                    <li><a href="articles/relaxation.html">Защо латино танците са перфектният начин за релаксация</a></li>
+                    <li><a href="articles/social-benefits.html">Социални и емоционални ползи от танците</a></li>
+                </ul>
+            </div>
+
+            <div class="blog-category">
+                <h3>Събития и новини</h3>
+                <ul>
+                    <li><a href="articles/upcoming-events.html">Предстоящи уъркшопи, партита и фестивали</a></li>
+                    <li><a href="articles/event-reports.html">Репортажи от последните събития в нашата школа</a></li>
+                    <li><a href="articles/special-guests.html">Специални гости и изненади</a></li>
+                </ul>
+            </div>
         </div>
     </main>
 

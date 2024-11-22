@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как да преодолеете притеснението си на дансинга - Danza de Pasion</title>
+    <!-- Запазваме същите стилове от first-steps.html -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/blog-header.jpg');
+            background-size: cover;
+            color: white;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/article-hero.jpg');
+            background-size: cover;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .article-content h2 {
+            color: #ff4d4d;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .article-content li:before {
+            content: "•";
+            color: #ff4d4d;
+            position: absolute;
+            left: 0;
+        }
+
+        .dance-style {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .dance-style:hover {
+            transform: translateY(-5px);
+        }
+
+        .dance-style h3 {
+            color: #ff4d4d;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ff4d4d;
+            padding-bottom: 0.5rem;
+        }
+
+        .back-to-blog {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-top: 2rem;
+        }
+
+        .back-to-blog:hover {
+            background: #ff3333;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: #ff4d4d;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #ff3333;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">Danza de Pasion</a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Начало</a></li>
+                <li><a href="../about.html">За нас</a></li>
+                <li><a href="../classes.html">Курсове</a></li>
+                <li><a href="../events.html">Събития</a></li>
+                <li><a href="../gallery.html">Галерия</a></li>
+                <li><a href="../blog.html">Блог</a></li>
+                <li><a href="../contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Как да преодолеете притеснението си на дансинга</h1>
+        <p>Съвети и техники за по-уверено танцуване</p>
+    </section>
+
+    <main class="container">
+        <div class="article-content">
+            <p>Притеснението на дансинга е нещо, което много хора изпитват, особено когато са начинаещи или танцуват пред публика. Танците обаче са свързани с изразяване, свобода и удоволствие, а не със страх или съмнение в себе си. В тази статия ще разгледаме няколко съвета, които ще ви помогнат да се почувствате по-уверени на дансинга и да се наслаждавате на всяко движение.</p>
+
+            <h2>1. Разберете, че притеснението е нормално</h2>
+            <ul>
+                <li>Почти всеки, който започва да танцува, изпитва известно притеснение. Това е напълно естествено.</li>
+                <li>Дори опитни танцьори понякога се чувстват нервни, особено на сцена или при нов стил танци.</li>
+                <li>Най-важното е да приемете чувствата си и да се фокусирате върху това да се забавлявате.</li>
+            </ul>
+
+            <h2>2. Фокусирайте се върху музиката</h2>
+            <ul>
+                <li>Вместо да мислите за това как изглеждате, насочете вниманието си към ритъма и мелодията.</li>
+                <li>Танците са форма на свързване с музиката – оставете тя да ви води.</li>
+                <li>Изберете песни, които ви вдъхновяват и ви карат да се движите естествено.</li>
+            </ul>
+
+            <h2>3. Подгответе се чрез практика</h2>
+            <ul>
+                <li>Редовната практика ви дава увереност. Колкото повече танцувате, толкова по-малко ще се притеснявате.</li>
+                <li>Започнете с основни движения у дома, където няма публика.</li>
+                <li>Практикувайте пред огледало – така ще видите как изглеждат движенията ви и ще подобрите координацията си.</li>
+            </ul>
+
+            <h2>4. Запомнете: Никой не ви съди</h2>
+            <ul>
+                <li>Повечето хора на дансинга са заети със своето собствено представяне и няма да обръщат внимание на вашите грешки.</li>
+                <li>Танцуването е споделено преживяване – всички са там, за да се забавляват, а не да критикуват.</li>
+                <li>Усмивката ви и вашата енергия са по-важни от перфектното изпълнение.</li>
+            </ul>
+
+            <h2>5. Започнете с прости движения</h2>
+            <ul>
+                <li>Ако сте нови в танците, не се опитвайте да правите сложни комбинации от първия ден.</li>
+                <li>Усвоете основните стъпки и ги изпълнявайте уверено. Това ще ви даде стабилност и самочувствие.</li>
+                <li>Постепенно добавяйте нови елементи, когато се почувствате готови.</li>
+            </ul>
+
+            <h2>6. Намерете подкрепяща среда</h2>
+            <ul>
+                <li>Присъединете се към група или школа за танци с приветлива атмосфера.</li>
+                <li>Социалните танцови събития са чудесно място за практика.</li>
+                <li>Там хората са приятелски настроени и споделят обща любов към танца.</li>
+            </ul>
+
+            <h2>7. Дишайте дълбоко и се отпуснете</h2>
+            <ul>
+                <li>Преди да започнете да танцувате, вземете няколко дълбоки вдишвания, за да успокоите нервите си.</li>
+                <li>Помнете, че напрежението във вашето тяло може да се отрази на движенията ви.</li>
+                <li>Опитайте да се отпуснете и да се движите естествено.</li>
+            </ul>
+
+            <h2>8. Поставете си реалистични цели</h2>
+            <ul>
+                <li>Не очаквайте да станете професионалист за една нощ.</li>
+                <li>Танцуването е умение, което се развива с времето.</li>
+                <li>Наслаждавайте се на малките успехи – всеки научен ход е крачка напред.</li>
+            </ul>
+
+            <h2>9. Танцувайте за себе си</h2>
+            <ul>
+                <li>Вместо да се притеснявате какво мислят другите, съсредоточете се върху това как се чувствате.</li>
+                <li>Танцът е начин да се свържете със себе си и да изразите емоциите си.</li>
+                <li>Ако се забавлявате, това ще проличи и на другите.</li>
+            </ul>
+
+            <h2>10. Участвайте в повече социални танци</h2>
+            <ul>
+                <li>Най-добрият начин да преодолеете страха си е да танцувате често, особено в социални ситуации.</li>
+                <li>События като салса и бачата партита са идеални за начинаещи.</li>
+                <li>Ще се запознаете с други хора, които са преминали през същото.</li>
+            </ul>
+
+            <h2>Заключение</h2>
+            <p>Притеснението на дансинга може да бъде предизвикателство, но с практика, търпение и правилна нагласа, можете да го преодолеете. Помнете, че танците са начин да се забавлявате, да изразявате себе си и да се свързвате с други хора. Не позволявайте на страха да ви спре – направете първата стъпка и ще откриете колко вдъхновяващ може да бъде светът на танците.</p>
+
+            <p><strong>Очакваме ви на дансинга в Danza de Pasion – мястото, където притеснението остава в миналото, а страстта към танца оживява!</strong></p>
+
+            <a href="../blog.html" class="back-to-blog">← Обратно към блога</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid container">
+            <div>
+                <h3>Контакти</h3>
+                <p>Адрес: Младежки дом, Ямбол</p>
+                <p>Телефон: +359 888 123 456</p>
+                <p>Email: info@danzadepasion.bg</p>
+            </div>
+            <div>
+                <h3>Работно време</h3>
+                <p>Понеделник - Петък: 17:00 - 22:00</p>
+                <p>Събота: 10:00 - 14:00</p>
+                <p>Неделя: Затворено</p>
+            </div>
+            <div>
+                <h3>Последвайте ни</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/148573925972706/">Facebook</a>
+                    <a href="https://www.instagram.com/danzadepasion/profilecard/?igsh=YzFpdzIyc3A1NnBo">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
