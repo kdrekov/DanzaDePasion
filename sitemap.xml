@@ -42,7 +42,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    <!-- Статии от блога -->
+    <!-- Блог статии -->
     <url>
         <loc>https://danzadepasion.eu/articles/first-steps.html</loc>
         <lastmod>2024-03-21</lastmod>
