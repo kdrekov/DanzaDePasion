@@ -1,23 +1,20 @@
-name: Optimize Images
+name: Validate HTML
 on:
   push:
     paths:
-      - '**.jpg'
-      - '**.jpeg'
-      - '**.png'
+      - '**.html'
     branches:
       - main
 
 jobs:
-  optimize:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       
-      - name: Optimize Images
-        uses: calibreapp/image-actions@main
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          jpegQuality: '85'
-          pngQuality: '85'
-          ignorePaths: 'node_modules/**'
+          root: .
+          format: text
+          log_level: INFO
