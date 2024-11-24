@@ -64,32 +64,32 @@ const galleries = {
         title: 'Котва 2024',
         images: [
             {
-                src: 'images/Kotva2024/gallery-1.jpg',
+                src: 'images/Kotva2024/gallery-1.JPG',
                 title: 'Котва 2024',
                 description: 'Февруари 2024'
             },
             {
-                src: 'images/Kotva2024/gallery-2.jpg',
+                src: 'images/Kotva2024/gallery-2.JPG',
                 title: 'Котва 2024',
                 description: 'Февруари 2024'
             },
             {
-                src: 'images/Kotva2024/gallery-3.jpg',
+                src: 'images/Kotva2024/gallery-3.JPG',
                 title: 'Котва 2024',
                 description: 'Февруари 2024'
             },
             {
-                src: 'images/Kotva2024/gallery-4.jpg',
+                src: 'images/Kotva2024/gallery-4.JPG',
                 title: 'Котва 2024',
                 description: 'Февруари 2024'
             },
             {
-                src: 'images/Kotva2024/gallery-5.jpg',
+                src: 'images/Kotva2024/gallery-5.JPG',
                 title: 'Котва 2024',
                 description: 'Февруари 2024'
             },
             {
-                src: 'images/Kotva2024/gallery-6.jpg',
+                src: 'images/Kotva2024/gallery-6.JPG',
                 title: 'Котва 2024',
                 description: 'Февруари 2024'
             }
