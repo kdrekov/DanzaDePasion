@@ -265,4 +265,30 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.key === 'Escape') closeGalleryModal();
         }
     });
+	// В края на DOMContentLoaded функцията добавете:
+if ('ontouchstart' in window) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.querySelector('.gallery-modal').addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+    }, false);
+    
+    document.querySelector('.gallery-modal').addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].clientX;
+        
+        // Определяме посоката на swipe
+        if (touchEndX < touchStartX - 50) { // swipe наляво
+            navigateGallery(1);
+        }
+        if (touchEndX > touchStartX + 50) { // swipe надясно
+            navigateGallery(-1);
+        }
+    }, false);
+}
+
+// Добавете preventDefault за touch събитията
+document.querySelector('.gallery-modal').addEventListener('touchmove', function(e) {
+    e.preventDefault();
+}, { passive: false });
 });
