@@ -264,18 +264,29 @@
 }
 
 .gallery-modal-content {
-    position: relative;
+   position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .gallery-modal-image {
-    max-width: 100%;
-    max-height: 100vh;
-    margin: auto;
+    max-width: 800px; /* Фиксирана максимална ширина */
+    max-height: 600px; /* Фиксирана максимална височина */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
+@media (max-width: 768px) {
+    .gallery-modal-image {
+        max-width: 90vw;  /* 90% от ширината на екрана за мобилни */
+        max-height: 80vh; /* 80% от височината на екрана за мобилни */
+    }
 }
 
 .gallery-modal-close {
@@ -324,7 +335,7 @@
         </nav>
     </header>
 
-    <main class="container">
+   <main class="container">
         <section class="gallery-intro">
             <h1>Нашата Галерия</h1>
             <p>Специални моменти, уловени на дансинга, от нашите курсове, събития и незабравими танцови партита.</p>
@@ -340,42 +351,47 @@
 
         <div class="gallery-grid">
             <!-- Курсове -->
-            <div class="gallery-item" onclick="openGalleryModal('images/course-1.jpg', [])">
+            <div class="gallery-item" data-gallery="coursesSalsa" data-index="0">
                 <img src="images/course-1.jpg" alt="Курс по салса">
                 <div class="overlay">
-                    <h3>Курс по салса</h3>
+                    <h3>Урок по салса</h3>
                     <p>Първи стъпки в салсата</p>
                 </div>
             </div>
-            <div class="gallery-item" onclick="openGalleryModal('images/course-2.jpg', [])">
+
+            <div class="gallery-item" data-gallery="coursesBachata" data-index="0">
                 <img src="images/course-2.jpg" alt="Курс по бачата">
                 <div class="overlay">
-                    <h3>Курс по бачата</h3>
-                    <p>Напреднала група</p>
+                    <h3>Урок по бачата</h3>
+                    <p>Първи стъпки в бачатата</p>
                 </div>
             </div>
 
-            <!-- Събития -->
-            <div class="gallery-item" onclick="openGalleryModal('images/event-1.jpg', ['images/event-1.jpg', 'images/Kotva2024/gallery-1.jpg', 
-			'images/Kotva2024/gallery-2.jpg', 'images/Kotva2024/gallery-3.jpg', 'images/Kotva2024/gallery-4.jpg', 'images/Kotva2024/gallery-5.jpg', 
-			'images/Kotva2024/gallery-6.jpg'])">
-                <img src="images/event-1.jpg" alt="Латино парти">
+            <div class="gallery-item" data-gallery="SpringParty" data-index="0">
+                <img src="images/event-1.jpg" alt="Пролетно парти">
                 <div class="overlay">
                     <h3>Пролетно парти</h3>
-                    <p>Април 2023</p>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openGalleryModal('images/event-2.jpg', ['images/event-2.jpg', 'images/Kotva2024/gallery-1.jpg', 
-			'images/Kotva2024/gallery-2.jpg', 'images/Kotva2024/gallery-3.jpg', 'images/Kotva2024/gallery-4.jpg', 'images/Kotva2024/gallery-5.jpg', 
-			'images/Kotva2024/gallery-6.jpg'])">
-                <img src="images/event-2.jpg" alt="Фестивал">
-                <div class="overlay">
-                    <h3>Танцов фестивал</h3>
                     <p>Май 2024</p>
                 </div>
             </div>
 
-            
+            <div class="gallery-item" data-gallery="kotva2024" data-index="0">
+                <img src="images/Kotva2024/gallery-1.jpg" alt="Котва 2024">
+                <div class="overlay">
+                    <h3>Котва 2024</h3>
+                    <p>Май 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Modal Window -->
+        <div class="gallery-modal">
+            <div class="gallery-modal-content">
+                <span class="gallery-modal-close">&times;</span>
+                <img id="gallery-modal-image" src="" alt="Gallery Image">
+                <span class="gallery-modal-navigation prev">&lsaquo;</span>
+                <span class="gallery-modal-navigation next">&rsaquo;</span>
+            </div>
         </div>
 		<section class="video-section">
         <h2>Видео акценти</h2>
@@ -442,83 +458,6 @@
     </div>
 </footer>
 
-<!-- Модален прозорец за галерията -->
-<div class="gallery-modal">
-    <div class="gallery-modal-content">
-        <span class="gallery-modal-close" onclick="closeGalleryModal()">&times;</span>
-        <img id="gallery-modal-image" src="" alt="Gallery Image">
-        <span class="gallery-modal-navigation prev" onclick="navigateGallery(-1)">&lsaquo;</span>
-        <span class="gallery-modal-navigation next" onclick="navigateGallery(1)">&rsaquo;</span>
-    </div>
-</div>
 
-<script>
-    let currentIndex = 0;
-let galleryImages = [];
 
-function openGalleryModal(imageSrc, images = []) {
-    const modal = document.querySelector('.gallery-modal');
-    const modalImg = document.getElementById('gallery-modal-image');
-    
-    modal.style.display = 'block';
-    modalImg.src = imageSrc;
-    
-    // Изчакваме изображението да се зареди
-    modalImg.onload = function() {
-        const imgWidth = this.naturalWidth;
-        const imgHeight = this.naturalHeight;
-        const windowWidth = window.innerWidth;
-        const windowHeight = window.innerHeight;
-        
-        // Изчисляваме съотношението
-        const scaleWidth = (windowWidth * 0.8) / imgWidth;
-        const scaleHeight = (windowHeight * 0.8) / imgHeight;
-        const scale = Math.min(scaleWidth, scaleHeight);
-        
-        // Задаваме новите размери
-        this.style.width = (imgWidth * scale) + 'px';
-        this.style.height = 'auto';
-    }
-
-    if (images.length > 0) {
-        galleryImages = images;
-        currentIndex = images.indexOf(imageSrc);
-        updateGalleryNavigation();
-    }
-}
-
-function closeGalleryModal() {
-    document.querySelector('.gallery-modal').style.display = 'none';
-}
-
-function navigateGallery(direction) {
-    currentIndex = (currentIndex + direction + galleryImages.length) % galleryImages.length;
-    const modalImg = document.getElementById('gallery-modal-image');
-    modalImg.src = galleryImages[currentIndex];
-    updateGalleryNavigation();
-}
-
-function updateGalleryNavigation() {
-    const prevBtn = document.querySelector('.gallery-modal-navigation.prev');
-    const nextBtn = document.querySelector('.gallery-modal-navigation.next');
-    
-    if (prevBtn) prevBtn.style.display = currentIndex > 0 ? 'block' : 'none';
-    if (nextBtn) nextBtn.style.display = currentIndex < galleryImages.length - 1 ? 'block' : 'none';
-}
-
-// Затваряне при клик извън изображението
-document.querySelector('.gallery-modal').addEventListener('click', function(e) {
-    if (e.target.classList.contains('gallery-modal')) {
-        closeGalleryModal();
-    }
-});
-
-// Keyboard навигация
-document.addEventListener('keydown', function(e) {
-    if (document.querySelector('.gallery-modal').style.display === 'block') {
-        if (e.key === 'ArrowLeft') navigateGallery(-1);
-        if (e.key === 'ArrowRight') navigateGallery(1);
-        if (e.key === 'Escape') closeGalleryModal();
-    }
-});
-</script>
+ <script src="js/gallery.js"></script>
