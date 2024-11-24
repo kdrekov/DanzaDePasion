@@ -34,7 +34,7 @@
           "contentUrl": "https://danzadepasion.eu/images/course-1.jpg"
         },
         {
-          "@type": "ImageObject",
+          "@type": "ImageObject", 
           "name": "Курс по бачата",
           "description": "Напреднала група",
           "contentUrl": "https://danzadepasion.eu/images/course-2.jpg"
@@ -90,40 +90,40 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-
+        
         nav a {
             color: white;
             text-decoration: none;
             padding: 0.5rem 1rem;
             transition: color 0.3s;
         }
-
+        
         nav a:hover {
             color: #ff4d4d;
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
-
+        
         .gallery-intro {
             text-align: center;
             margin-bottom: 3rem;
         }
-
+        
         .gallery-intro h1 {
             color: #ff4d4d;
             margin-bottom: 1rem;
         }
-
+        
         .gallery-nav {
             display: flex;
             justify-content: center;
             margin-bottom: 2rem;
         }
-
+        
         .gallery-nav button {
             background: none;
             border: none;
@@ -133,37 +133,37 @@
             color: #666;
             transition: color 0.3s;
         }
-
+        
         .gallery-nav button.active {
             color: #ff4d4d;
             border-bottom: 2px solid #ff4d4d;
         }
-
+        
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
+            gap: 1rem; 
             margin-bottom: 3rem;
         }
-
+        
         .gallery-item {
             position: relative;
             overflow: hidden;
             border-radius: 10px;
             cursor: pointer;
         }
-
+        
         .gallery-item img {
             width: 100%;
             height: 250px;
             object-fit: cover;
             transition: transform 0.3s;
         }
-
+        
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-
+        
         .gallery-item .overlay {
             position: absolute;
             bottom: 0;
@@ -175,37 +175,37 @@
             transform: translateY(100%);
             transition: transform 0.3s;
         }
-
+        
         .gallery-item:hover .overlay {
             transform: translateY(0);
         }
-
+        
         .video-section {
             margin-top: 4rem;
         }
-
+        
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
+        
         .video-item {
             background: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
+        
         .video-item iframe {
             width: 100%;
             height: auto;
         }
-
+        
         .video-content {
             padding: 1rem;
         }
-
+        
         .share-section {
             text-align: center;
             margin: 4rem 0;
@@ -213,7 +213,7 @@
             background: #f9f9f9;
             border-radius: 10px;
         }
-
+        
         .btn {
             display: inline-block;
             padding: 1rem 2rem;
@@ -223,31 +223,89 @@
             border-radius: 5px;
             transition: background 0.3s;
         }
-
+        
         .btn:hover {
             background: #ff3333;
         }
-
+        
         footer {
             background: #333;
             color: white;
             padding: 2rem;
             margin-top: 2rem;
         }
-
+        
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
-		.footer-grid .social-links a {
-		color: #ff4d4d; /* Червен цвят */
-        text
+        
+        .footer-grid .social-links a {
+            color: #ff4d4d; /* Червен цвят */
+        }
+        
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
+
+        /* Стилове за модалния прозорец */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.gallery-modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal-image {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+}
+
+.gallery-modal-close {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.gallery-modal-navigation {
+    position: fixed;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px;
+}
+
+.gallery-modal-navigation.prev {
+    left: 15px;
+}
+
+.gallery-modal-navigation.next {
+    right: 15px;
+}
     </style>
 </head>
 <body>
@@ -282,14 +340,14 @@
 
         <div class="gallery-grid">
             <!-- Курсове -->
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openGalleryModal('images/course-1.jpg', [])">
                 <img src="images/course-1.jpg" alt="Курс по салса">
                 <div class="overlay">
                     <h3>Курс по салса</h3>
                     <p>Първи стъпки в салсата</p>
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openGalleryModal('images/course-2.jpg', [])">
                 <img src="images/course-2.jpg" alt="Курс по бачата">
                 <div class="overlay">
                     <h3>Курс по бачата</h3>
@@ -298,14 +356,18 @@
             </div>
 
             <!-- Събития -->
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openGalleryModal('images/event-1.jpg', ['images/event-1.jpg', 'images/Kotva2024/gallery-1.jpg', 
+			'images/Kotva2024/gallery-2.jpg', 'images/Kotva2024/gallery-3.jpg', 'images/Kotva2024/gallery-4.jpg', 'images/Kotva2024/gallery-5.jpg', 
+			'images/Kotva2024/gallery-6.jpg'])">
                 <img src="images/event-1.jpg" alt="Латино парти">
                 <div class="overlay">
                     <h3>Пролетно парти</h3>
                     <p>Април 2023</p>
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openGalleryModal('images/event-2.jpg', ['images/event-2.jpg', 'images/Kotva2024/gallery-1.jpg', 
+			'images/Kotva2024/gallery-2.jpg', 'images/Kotva2024/gallery-3.jpg', 'images/Kotva2024/gallery-4.jpg', 'images/Kotva2024/gallery-5.jpg', 
+			'images/Kotva2024/gallery-6.jpg'])">
                 <img src="images/event-2.jpg" alt="Фестивал">
                 <div class="overlay">
                     <h3>Танцов фестивал</h3>
@@ -313,72 +375,150 @@
                 </div>
             </div>
 
-           
+            
         </div>
+		<section class="video-section">
+        <h2>Видео акценти</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/pg5zoVH1U6A" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
 
-        <section class="video-section">
-            <h2>Видео акценти</h2>
-            <div class="video-grid">
-                <div class="video-item">
-                   <iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/pg5zoVH1U6A" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
-
-                    <div class="video-content">
-                        <h3>Годишно шоу 2024</h3>
-                        <p>Най-добрите моменти от нашето годишно представление</p>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/3DhkGmaxYKI" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
-
-                    <div class="video-content">
-                        <h3>Летен фестивал</h3>
-                        <p>Моменти от нашия летен танцов фестивал</p>
-                    </div>
+                <div class="video-content">
+                    <h3>Годишно шоу 2024</h3>
+                    <p>Най-добрите моменти от нашето годишно представление</p>
                 </div>
             </div>
-        </section>
+            <div class="video-item">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/3DhkGmaxYKI" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
 
-       
-    </main>
-
-    <footer>
-        <div class="footer-grid container">
-            <div>
-                <h3>Контакти</h3>
-                <p>Адрес: Младежки дом, Ямбол</p>
-                <p>Телефон: +359 89 6033 536</p>
-                <p>Email: info@danzadepasion.bg</p>
-            </div>
-            <div>
-                <h3>Работно време</h3>
-                <p>Понеделник - Петък: 17:00 - 22:00</p>
-                <p>Събота: 10:00 - 14:00</p>
-                <p>Неделя: Затворено</p>
-            </div>
-            <div>
-                <h3>Последвайте ни</h3>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/groups/148573925972706/">Facebook</a>
-                    <a href="https://www.instagram.com/danzadepasion/profilecard/?igsh=YzFpdzIyc3A1NnBo">Instagram</a>
+                <div class="video-content">
+                    <h3>Летен фестивал</h3>
+                    <p>Моменти от нашия летен танцов фестивал</p>
                 </div>
             </div>
         </div>
-    </footer>
-</body>
-</html>
+    </section>
+
+   
+</main>
+
+<footer>
+    <div class="footer-grid container">
+        <div>
+            <h3>Контакти</h3>
+            <p>Адрес: Младежки дом, Ямбол</p>
+            <p>Телефон: +359 89 6033 536</p>
+            <p>Email: info@danzadepasion.bg</p>
+        </div>
+        <div>
+            <h3>Работно време</h3>
+            <p>Понеделник - Петък: 17:00 - 22:00</p>
+            <p>Събота: 10:00 - 14:00</p>
+            <p>Неделя: Затворено</p>
+        </div>
+        <div>
+            <h3>Последвайте ни</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/groups/148573925972706/">Facebook</a>
+                <a href="https://www.instagram.com/danzadepasion/profilecard/?igsh=YzFpdzIyc3A1NnBo">Instagram</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Модален прозорец за галерията -->
+<div class="gallery-modal">
+    <div class="gallery-modal-content">
+        <span class="gallery-modal-close" onclick="closeGalleryModal()">&times;</span>
+        <img id="gallery-modal-image" src="" alt="Gallery Image">
+        <span class="gallery-modal-navigation prev" onclick="navigateGallery(-1)">&lsaquo;</span>
+        <span class="gallery-modal-navigation next" onclick="navigateGallery(1)">&rsaquo;</span>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+let galleryImages = [];
+
+function openGalleryModal(imageSrc, images = []) {
+    const modal = document.querySelector('.gallery-modal');
+    const modalImg = document.getElementById('gallery-modal-image');
+    
+    modal.style.display = 'block';
+    modalImg.src = imageSrc;
+    
+    // Изчакваме изображението да се зареди
+    modalImg.onload = function() {
+        const imgWidth = this.naturalWidth;
+        const imgHeight = this.naturalHeight;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        
+        // Изчисляваме съотношението
+        const scaleWidth = (windowWidth * 0.8) / imgWidth;
+        const scaleHeight = (windowHeight * 0.8) / imgHeight;
+        const scale = Math.min(scaleWidth, scaleHeight);
+        
+        // Задаваме новите размери
+        this.style.width = (imgWidth * scale) + 'px';
+        this.style.height = 'auto';
+    }
+
+    if (images.length > 0) {
+        galleryImages = images;
+        currentIndex = images.indexOf(imageSrc);
+        updateGalleryNavigation();
+    }
+}
+
+function closeGalleryModal() {
+    document.querySelector('.gallery-modal').style.display = 'none';
+}
+
+function navigateGallery(direction) {
+    currentIndex = (currentIndex + direction + galleryImages.length) % galleryImages.length;
+    const modalImg = document.getElementById('gallery-modal-image');
+    modalImg.src = galleryImages[currentIndex];
+    updateGalleryNavigation();
+}
+
+function updateGalleryNavigation() {
+    const prevBtn = document.querySelector('.gallery-modal-navigation.prev');
+    const nextBtn = document.querySelector('.gallery-modal-navigation.next');
+    
+    if (prevBtn) prevBtn.style.display = currentIndex > 0 ? 'block' : 'none';
+    if (nextBtn) nextBtn.style.display = currentIndex < galleryImages.length - 1 ? 'block' : 'none';
+}
+
+// Затваряне при клик извън изображението
+document.querySelector('.gallery-modal').addEventListener('click', function(e) {
+    if (e.target.classList.contains('gallery-modal')) {
+        closeGalleryModal();
+    }
+});
+
+// Keyboard навигация
+document.addEventListener('keydown', function(e) {
+    if (document.querySelector('.gallery-modal').style.display === 'block') {
+        if (e.key === 'ArrowLeft') navigateGallery(-1);
+        if (e.key === 'ArrowRight') navigateGallery(1);
+        if (e.key === 'Escape') closeGalleryModal();
+    }
+});
+</script>
